@@ -1,0 +1,15 @@
+{
+  "expo": {
+    "name": "BBF",
+    "icon": "./src/images/bbf_logo.png",
+    "version": "1.0.0",
+    "slug": "bbf",
+    "sdkVersion": "26.0.0",
+    "ios": {
+      "bundleIdentifier": "com.jik.bbf"
+    },
+    "android": {
+      "package": "com.jik.bbf"
+    }
+  }
+}
