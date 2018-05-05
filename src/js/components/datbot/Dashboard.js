@@ -20,14 +20,15 @@ export default class Dashboard extends React.Component{
     }
 
     render(){
+        let parent = this;
         if(this.state.fontLoaded){
             return(
                 <View style={styles.mainContainer}>
                     {DatBot.getController().getNonBannedBots().map(function(bot, key){
                         return (
-                            <TouchableOpacity style={styles.botContainer}>
+                            <TouchableOpacity key={key} style={styles.botContainer} onPress={() => parent.props.navigation.navigate('BotInformation', {title: bot.getName()})}>
                                 <View style={styles.innerContainer}>
-                                    <Text key={key} style={{...styles.text, fontFamily:"Uni"}}>
+                                    <Text style={{...styles.text, fontFamily:"Uni"}}>
                                         {bot.getName()}
                                     </Text>
                                 </View>
@@ -61,7 +62,7 @@ const styles = {
         height: "70%",
         alignItems: 'center',
         justifyContent: 'center',
-        borderRadius: "20%"
+        borderRadius: 20
     },
 
     text: {

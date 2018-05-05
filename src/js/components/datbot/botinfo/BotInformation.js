@@ -1,7 +1,7 @@
 import React from 'react';
 import { Text, View, Animated, Easing } from 'react-native';
 
-export class SpecBot extends React.Component{
+export default class BotInformation extends React.Component{
     constructor(props){
         super(props);
         this.fadeValue = new Animated.Value(0);
@@ -9,8 +9,12 @@ export class SpecBot extends React.Component{
         this.fadeIn = this.fadeIn.bind(this);
     }
 
-    static navigationOptions = {
-        title: 'SpecBot'
+    static navigationOptions = ({ navigation }) => {
+        const { params } = navigation.state;
+
+        return {
+            title: params.title
+        }
     };
 
     componentDidMount(){

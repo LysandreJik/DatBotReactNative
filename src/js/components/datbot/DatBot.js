@@ -27,6 +27,14 @@ export class DatBot extends React.Component{
         this.state = {dataFetched: false, currentWindow: AVAILABLE_DATBOT_PAGES.DASHBOARD};
     }
 
+    static navigationOptions = {
+        title: 'DatBot',
+        headerStyle: {
+            backgroundColor: "rgb(50, 50, 50)"
+        },
+        headerTintColor: '#fff',
+    };
+
     static getController(){
         if(DatBot._controller === undefined){
             DatBot._controller = new DashboardController();
@@ -56,7 +64,7 @@ export class DatBot extends React.Component{
     getWindow(){
         if(this.state.dataFetched){
             if(this.state.currentWindow === AVAILABLE_DATBOT_PAGES.DASHBOARD){
-                return <Dashboard/>
+                return <Dashboard navigation={this.props.navigation}/>
             }
 
             return <View><Text>Data is fetched</Text></View>

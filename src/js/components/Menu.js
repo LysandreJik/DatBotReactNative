@@ -2,13 +2,20 @@ import React from 'react';
 import { Text, View, Image, TouchableOpacity, Linking} from 'react-native';
 // import Data from "../structure/Data";
 import { Font } from 'expo';
-import {AVAILABLE_PAGES} from "./App";
 
 export class Menu extends React.Component{
     constructor(){
         super();
         this.state = {fontLoaded: false};
     }
+
+    static navigationOptions = {
+        title: 'Menu',
+        headerStyle: {
+            backgroundColor: "#000"
+        },
+        headerTintColor: '#fff',
+    };
 
     async componentDidMount(){
         await Font.loadAsync({
