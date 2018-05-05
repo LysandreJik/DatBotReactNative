@@ -1,5 +1,9 @@
 import React from 'react';
 import { Text, View, Animated, Easing } from 'react-native';
+import {DatBot} from "../DatBot";
+import {Container, Content} from 'native-base';
+import Swiper from 'react-native-swiper';
+
 
 export default class BotInformation extends React.Component{
     constructor(props){
@@ -13,7 +17,11 @@ export default class BotInformation extends React.Component{
         const { params } = navigation.state;
 
         return {
-            title: params.title
+            title: params.title,
+            headerStyle: {
+                backgroundColor: "rgb(50, 50, 50)"
+            },
+            headerTintColor: '#fff',
         }
     };
 
@@ -33,13 +41,23 @@ export default class BotInformation extends React.Component{
         });
 
         return(
-            <View style={styles.container}>
-                <Animated.View style={{opacity: fade}}>
+            <Swiper style={styles.height}>
+                <View style={styles.container}>
                     <Text>
-                        Specbot mameneeee
+                        Actual occupation
                     </Text>
-                </Animated.View>
-            </View>
+                </View>
+                <View style={styles.container}>
+                    <Text>
+                        Graphs
+                    </Text>
+                </View>
+                <View style={styles.container}>
+                    <Text>
+                        Map
+                    </Text>
+                </View>
+            </Swiper>
         )
     }
 }
@@ -47,9 +65,10 @@ export default class BotInformation extends React.Component{
 const styles = {
     container: {
         flex: 1,
-        backgroundColor: 'white',
+        backgroundColor: 'rgb(50, 50, 50)',
         alignItems: 'center',
         justifyContent: 'center',
-        width: "100%"
+        width: "100%",
+        height: "100%"
     },
 };

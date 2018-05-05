@@ -11,10 +11,6 @@ export class Menu extends React.Component{
 
     static navigationOptions = {
         title: 'Menu',
-        headerStyle: {
-            backgroundColor: "#000"
-        },
-        headerTintColor: '#fff',
     };
 
     async componentDidMount(){
@@ -47,7 +43,7 @@ export class Menu extends React.Component{
                         <MenuItem callback={{isLink: true, link:'https://github.com/ProjectBlackFalcon'}} text={"Bbf"} small={true}/>
                         <MenuItem callback={{isLink: true, link:'https://github.com/Ugdha'}} text={"Ugdha"} small={true}/>
                         <MenuItem callback={{isLink: true, link:'https://github.com/BaptisteBdn'}} text={"Cen"} small={true}/>
-                        <MenuItem callback={{isLink: true, link:'https://github.com/LysandreJik'}} text={"Jik"} small={true}/>
+                        <MenuItem callback={{isLink: true, link:'http://lysandredebut.fr'}} text={"Jik"} small={true}/>
                     </View>
                 </View>
             );
@@ -84,7 +80,7 @@ class MenuItem extends React.Component{
 
 const styles = {
     container: {
-        backgroundColor: 'black',
+        backgroundColor: 'white',
         flex: 1,
         flexDirection: "column",
         width: "100%"
@@ -121,7 +117,7 @@ const styles = {
     },
 
     textSmall: {
-        color: "white",
+        color: "black",
         fontSize: 40
     },
 

@@ -1,5 +1,5 @@
 import React from 'react';
-import { Text, View, Animated, Easing } from 'react-native';
+import { Text, View, Animated, Easing, WebView } from 'react-native';
 
 export class SpecBot extends React.Component{
     constructor(props){
@@ -29,13 +29,9 @@ export class SpecBot extends React.Component{
         });
 
         return(
-            <View style={styles.container}>
-                <Animated.View style={{opacity: fade}}>
-                    <Text>
-                        Specbot mameneeee
-                    </Text>
-                </Animated.View>
-            </View>
+            <WebView
+                source={{uri: 'https://madoff.lysandredebut.fr/index.php'}}
+            />
         )
     }
 }

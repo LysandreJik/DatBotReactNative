@@ -9,11 +9,17 @@ export default class Fetching extends React.Component{
     }
 
     componentDidMount(){
-        setTimeout(() => this.fetchData(), 1000);
+        this.fetchData();
     }
 
     fetchData(){
-        DatBot.getController().refreshSQLData(this.props.callback);
+        if(DatBot.getController().sqlData.length > 0){
+            this.props.callback();
+            DatBot.getController().refreshSQLData();
+        }else{
+            DatBot.getController().refreshSQLData(this.props.callback);
+        }
+
     }
 
     render(){

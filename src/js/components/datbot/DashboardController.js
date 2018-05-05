@@ -24,7 +24,7 @@ export class DashboardController{
                     parent.bots.push(new Bot({name:parent.sqlData[i].name, data:parent.sqlData[i].data, position:parent.sqlData[i].position, banned:parent.sqlData[i].banned}));
                 }
             })
-            .then(() => {callback()})
+            .then(() => {if(callback !== undefined){callback()}})
             .done();
     }
 
