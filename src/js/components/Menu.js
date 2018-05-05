@@ -2,7 +2,7 @@ import React from 'react';
 import { Text, View, Image, TouchableOpacity, Linking} from 'react-native';
 // import Data from "../structure/Data";
 import { Font } from 'expo';
-import {AVAILABLE_PAGES} from "../../../App";
+import {AVAILABLE_PAGES} from "./App";
 
 export class Menu extends React.Component{
     constructor(){
@@ -26,11 +26,11 @@ export class Menu extends React.Component{
                 <View style={styles.container}>
                     <View style={[styles.boxContainer, styles.boxOne]}>
                         <Image style={styles.image} source={require('../../images/specbot.png')}/>
-                        <MenuItem callback={{isLink: false, link: () => this.props.callback(AVAILABLE_PAGES.SPECBOT)}} text={"SpecBot"}/>
+                        <MenuItem callback={{isLink: false, link: () => this.props.navigation.navigate("SpecBot")}} text={"SpecBot"}/>
                     </View>
                     <View style={[styles.boxContainer, styles.boxTwo]}>
                         <Image style={styles.image} source={require('../../images/datbot.png')}/>
-                        <MenuItem callback={{isLink: false, link:() => this.props.callback(AVAILABLE_PAGES.DATBOT)}} text={"DatBot"}/>
+                        <MenuItem callback={{isLink: false, link:() => this.props.navigation.navigate("DatBot")}} text={"DatBot"}/>
                     </View>
                     <View style={[styles.boxContainer, styles.boxThree]}>
                         <Image style={styles.image} source={require('../../images/sniffer.png')}/>
@@ -60,7 +60,7 @@ class MenuItem extends React.Component{
 
     onPress(){
         if(this.props.callback.isLink){
-            Linking.openURL(this.props.link);
+            Linking.openURL(this.props.callback.link);
         }else{
             this.props.callback.link();
         }
@@ -77,6 +77,7 @@ class MenuItem extends React.Component{
 
 const styles = {
     container: {
+        backgroundColor: 'black',
         flex: 1,
         flexDirection: "column",
         width: "100%"

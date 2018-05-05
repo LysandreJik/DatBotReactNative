@@ -12,8 +12,6 @@ export const AVAILABLE_DATBOT_PAGES = {
     GRAVEYARD: 2
 };
 
-
-
 export class DatBot extends React.Component{
     constructor(props){
         super(props);
